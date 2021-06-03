@@ -74,13 +74,13 @@ fi
 url="https://github.com/mozilla/glean/releases/download/${NEW_VERSION}/Glean.xcframework.zip"
 echo "Release URL: ${url}"
 
-if [ ! -f "Glean.xcframework.zip" ]; then
-    curl -sfSL --retry 5 -O "$url"
-fi
+#if [ ! -f "Glean.xcframework.zip" ]; then
+#    curl -sfSL --retry 5 -O "$url"
+#fi
 
 # Equivalent to `swift package compute-checksum $package`,
 # but works without having Swift.
-checksum=$(shasum -a 256 Glean.xcframework.zip | awk '{print $1}')
+checksum=$(shasum -a 256 README.md | awk '{print $1}')
 echo "Checksum: ${checksum}"
 
 FILE=Package.swift
